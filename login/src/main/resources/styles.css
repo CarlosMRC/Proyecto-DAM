@@ -1,0 +1,57 @@
+/* Estilo general del contenedor */
+.anchor-pane {
+    -fx-background-color: #f2f2f2;
+}
+
+/* Estilo del VBox */
+.vbox {
+    -fx-padding: 20;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+/* Estilo de los títulos */
+.label {
+    -fx-text-fill: #333333;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo de los campos de texto */
+.text-field, .password-field {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 40px;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+}
+
+/* Estilo de los botones */
+.button {
+    -fx-background-color: #5cb85c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #4cae4c;
+}
+
+/* Estilo del enlace de recuperación de contraseña */
+.hyperlink {
+    -fx-text-fill: #337ab7;
+}
+
+.backgroundPane {
+    -fx-background-image: url('file:C:/Users/usuario/Documents/ProyectoFCT/login/src/main/resources/com/example/images/imagen.jpg');
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 25, 0.5, 0, 0);
+}
