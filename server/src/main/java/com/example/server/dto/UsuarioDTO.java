@@ -1,4 +1,4 @@
-package com.example.server;
+package com.example.server.dto;
 
 public class UsuarioDTO {
     private String nombreUsuario;

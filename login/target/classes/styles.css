@@ -50,7 +50,7 @@
 }
 
 .backgroundPane {
-    -fx-background-image: url('file:C:/Users/usuario/Documents/ProyectoFCT/login/src/main/resources/com/example/images/imagen.jpg');
+    -fx-background-image: url('file:login/src/main/resources/com/example/images/imagen.jpg');
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 25, 0.5, 0, 0);

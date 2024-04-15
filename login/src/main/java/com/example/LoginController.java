@@ -13,6 +13,7 @@ import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 public class LoginController {
 
@@ -53,19 +54,27 @@ public class LoginController {
     private PasswordField loginPasswordField;
 
     @FXML
+    private Text txtMessage;
+
+    @FXML
     private void showRegistrationPane() {
         registrationPane.toFront();
-        loginUsernameField.clear();
-        loginPasswordField.clear();
+        clearAllText();
     }
 
     @FXML
     private void showLoginPane() {
         loginPane.toFront();
+        clearAllText();
+    }
+
+    private void clearAllText() {
         usernameField.clear();
         emailField.clear();
         passwordField.clear();
         confirmPasswordField.clear();
+        loginUsernameField.clear();
+        loginPasswordField.clear();
     }
 
     @FXML
@@ -73,8 +82,18 @@ public class LoginController {
         String nombreUsuario = usernameField.getText();
         String correoElectronico = emailField.getText();
         String contraseña = passwordField.getText();
+        String confirmarContraseña = confirmPasswordField.getText();
 
-        registrarUsuario(nombreUsuario, correoElectronico, contraseña);
+        if (nombreUsuario.isEmpty() || correoElectronico.isEmpty() || contraseña.isEmpty() || confirmarContraseña.isEmpty()) {
+            txtMessage.setText("Por favor, rellene todos los campos");
+        } else if (!contraseña.equals(confirmarContraseña)) {
+            txtMessage.setText("Las contraseñas no coinciden");
+            passwordField.clear();
+            confirmPasswordField.clear();
+        } else {
+            clearAllText();
+            registrarUsuario(nombreUsuario, correoElectronico, contraseña);
+        }
     }
 
     @FXML
@@ -113,6 +132,7 @@ public class LoginController {
                     respuesta.append(respuestaLinea.trim());
                 }
                 System.out.println("Respuesta del servidor: " + respuesta.toString());
+                txtMessage.setText(respuesta.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -146,6 +166,7 @@ public class LoginController {
                     respuesta.append(respuestaLinea.trim());
                 }
                 System.out.println("Respuesta del servidor: " + respuesta.toString());
+                txtMessage.setText(respuesta.toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
